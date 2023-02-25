@@ -28,15 +28,23 @@ public class PruebaPractica {
 		char div = '/';
 		char parentesisi = '(';
 		char parentesisf = ')';
-		int operator;
+		int operator1, operator2;
+		String numS;
+		double numD;
 		char [] n_formula = formula.toCharArray();
 
 		//Búsqueda de un paréntesis
 		for (int i=0 ; i<formula.length(); i++) {
 			if (n_formula[i] == parentesisi) {
-				operator = i;
-				result = n_formula;
-				
+				operator1 = (int)i;
+				for (int f=operator1; f<formula.length(); f++) {
+					if (n_formula[f] == parentesisf) {
+						operator2 = (int)f;
+						numS = formula.substring((i+1), (f-1));
+						numD = Double.parseDouble (numS);
+						
+					}
+				}
 			}
 			return result;
 		}
